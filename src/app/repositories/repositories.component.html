@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-search (searchOutput)="myRepoSearch($event)"></app-search>
+
+    <div *ngFor="let repo of repos">
+        <div *ngIf="repo" >
+            <h2>Name:<span>{{repo.name}}</span></h2>
+        </div>
+        <div *ngIf="repo">
+            <p>Description: <span>{{repo.description}}</span></p>
+            <p>Language: <span>{{repo.language}}</span></p>
+            <p>Date Created: <span>{{repo.created_at}}</span></p>
+            <p>Visit: <span>{{repo.html_url}}</span></p>
+        </div>
+    </div>
+</body>
+</html>

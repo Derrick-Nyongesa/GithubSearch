@@ -9,14 +9,14 @@ import { Repository } from '../repository';
   styleUrls: ['./repositories.component.css']
 })
 export class RepositoriesComponent implements OnInit {
- repo:Repository[];
+ repos:Repository[];
 
   constructor(private repoService:RepoRequestService) { }
 
   myRepoSearch(searchName) {
     this.repoService.searchRepoRequest(searchName).then(
       (success)=>{
-        this.repo = this.repoService.foundRepo;
+        this.repos = this.repoService.foundRepo;
       },
       (error)=>{
         console.log(error)
