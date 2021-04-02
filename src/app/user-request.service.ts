@@ -20,7 +20,7 @@ export class UserRequestService {
       followers_url: string;
       following_url: string;
     }
-    let promise = new Promise((resolve,reject)=>{
+    let promise = new Promise<void>((resolve,reject)=>{
       this.http.get<ApiResponse>('https://api.github.com/search/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(response=>{
         this.user.login = response.login
         this.user.avatar_url = response.avatar_url
