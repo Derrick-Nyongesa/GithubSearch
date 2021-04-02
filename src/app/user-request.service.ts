@@ -7,30 +7,33 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserRequestService {
-  user:User;
+  foundUser:User[];
 
   constructor(private http: HttpClient) { 
-    this.user = new User("", "", "", "");
+    this.foundUser;
   }
 
   searchUsersRequest(searchName: string){
     interface ApiResponse{
-      login:string;
-      avatar_url:string;
-      followers_url: string;
-      following_url: string;
+      total_count:number;
+      incomplete_results:boolean;
+      items: User[];
+    }
+    let options = {
+      headers: {
+        'Authorization': 'Basic ' + btoa(environment.apiKey)
+      },
+      params: {
+        'q': searchName,
+      }
     }
     let promise = new Promise<void>((resolve,reject)=>{
-      this.http.get<ApiResponse>('https://api.github.com/search/users/'+searchName+'?access_token='+environment.apiKey).toPromise().then(response=>{
-        this.user.login = response.login
-        this.user.avatar_url = response.avatar_url
-        this.user.followers_url = response.followers_url
-        this.user.following_url = response.following_url
-        
+      this.http.get<ApiResponse>('https://api.github.com/search/users', options).toPromise().then(response=>{
+        this.foundUser = response.items
         resolve()
       },
       error=>{
-        this.user.login = "You got an error"
+        this.foundUser = []
 
         reject(error)
       })

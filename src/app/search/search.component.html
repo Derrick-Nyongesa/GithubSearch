@@ -8,14 +8,14 @@
 </head>
 <body>
     <div>
-        <form>
-            <div>
-                <input type="text" placeholder="Enter Github username">
-            </div><br>
-            <div>
-                <button>Search</button>
+        <form (ngSubmit)='submitSearch()' #goalForm='ngForm'>
+            <div class="form-group">
+                <input type="text" required class="form-control" id="search" placeholder="Enter a github username" name="search" #search="ngModel" [(ngModel)]="searchName">
+      
             </div>
+            <button type="submit" class="btn btn-success">Find User</button>
         </form>
-    </div>
+      </div>
+   
 </body>
 </html>
