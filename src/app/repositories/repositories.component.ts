@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Search } from "../Search";
-import { UserRequestService } from '../user-request.service'
+import { RepoRequestService } from '../repo-request.service';
 import { Repository } from '../repository';
 
 @Component({
@@ -11,12 +11,12 @@ import { Repository } from '../repository';
 export class RepositoriesComponent implements OnInit {
  repo:Repository[];
 
-  constructor(private userService:UserRequestService) { }
+  constructor(private repoService:RepoRequestService) { }
 
   myRepoSearch(searchName) {
-    this.userService.searchUsersRequest(searchName).then(
+    this.repoService.searchRepoRequest(searchName).then(
       (success)=>{
-        this.repo = this.userService.foundUser;
+        this.repo = this.repoService.foundRepo;
       },
       (error)=>{
         console.log(error)

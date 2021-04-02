@@ -13,7 +13,7 @@ export class RepoRequestService {
     this.foundRepo;
    }
 
-   searchReposRequest(searchName: string){
+   searchRepoRequest(searchName: string){
     interface ApiResponse{
       total_count:number;
       incomplete_results:boolean;
