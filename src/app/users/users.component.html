@@ -7,20 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Enter a Github usename to view the profile</p>
+    <div class="container">
+        <p>Enter a Github usename to view the profile</p>
     <app-search (searchOutput)="mySearch($event)"></app-search>
 
+    
     <div *ngFor="let user of users">
-        <div *ngIf="user">
-            <img src="{{user.avatar_url}}" alt="">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card-img-top">
+                    <div *ngIf="user" class="card-img-top">
+                        <img src="{{user.avatar_url}}" alt="">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-8">
+                <div class="user">
+                    <div *ngIf="user" >
+                        <h2>Name:<span>{{user.login}}</span></h2>
+                    </div>
+                    <div *ngIf="user">
+                        <p>Followers: <span>{{user.followers_url}}</span></p>
+                        <p>Following: <span>{{user.following_url}}</span></p>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-        <div *ngIf="user" >
-            <h2>Name:<span>{{user.login}}</span></h2>
-        </div>
-        <div *ngIf="user">
-            <p>Followers: <span>{{user.followers_url}}</span></p>
-            <p>Following: <span>{{user.following_url}}</span></p>
-        </div>
+        
+        
     </div>
+    </div>
+    
 </body>
 </html>
