@@ -13,7 +13,7 @@
     <app-search (searchOutput)="myRepoSearch($event)"></app-search>
 
         <div *ngFor="let repo of repos">
-            <div class="repos">
+            <div appHighlight class="repos">
                 <div *ngIf="repo" class="name">
                     <h2>Repository Name: <span class="highlight">{{repo.name}}</span></h2>
                 </div>
