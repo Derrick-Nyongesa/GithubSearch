@@ -21,7 +21,8 @@
                     <p>Description: <span>{{repo.description}}</span></p>
                     <p>Language: <span>{{repo.language}}</span></p>
                     <p>Date Created: <span>{{repo.created_at|dateCount}}</span></p>
-                    <p>Visit: <span>{{repo.html_url}}</span></p>
+                    <p>Visit: <a href="{{repo.html_url}}"><button class="btn-outline-success btn btn-sm">Go to Repository</button></a></p>
+                    
                 </div>
             </div>
     </div>
