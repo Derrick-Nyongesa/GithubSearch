@@ -10,6 +10,7 @@ import { UsersComponent } from './users/users.component';
 import { RepositoriesComponent } from './repositories/repositories.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DateCountPipe } from './date-count.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UsersComponent,
     RepositoriesComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DateCountPipe
   ],
   imports: [
     BrowserModule,
