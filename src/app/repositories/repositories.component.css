@@ -1,0 +1,30 @@
+body {
+    background: #92bde7;
+    line-height: 1.6;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
+    font-size: 16px;
+}
+
+.para{
+    font-size: 25px;
+    text-align: center;
+}
+
+.repos{
+    padding: 20px;
+    border: #ccc solid 1px;
+    margin-bottom: 20px;
+    background-color:#e6e6e6;
+    width: 100%;
+    color: #485e74;
+}
+
+.highlight{
+    color: #0088cc;
+    font-weight: bold;
+}
+
+.name{
+    border-bottom: solid 3px #0088cc;
+}

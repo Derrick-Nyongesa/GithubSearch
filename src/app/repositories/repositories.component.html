@@ -7,19 +7,25 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Enter a github username to view the repositories</p>
+    <div class="container">
+        <p class="para">Enter a github username to view the repositories</p>
     <app-search (searchOutput)="myRepoSearch($event)"></app-search>
 
-    <div *ngFor="let repo of repos">
-        <div *ngIf="repo" >
-            <h2>Name:<span>{{repo.name}}</span></h2>
-        </div>
-        <div *ngIf="repo">
-            <p>Description: <span>{{repo.description}}</span></p>
-            <p>Language: <span>{{repo.language}}</span></p>
-            <p>Date Created: <span>{{repo.created_at|dateCount}}</span></p>
-            <p>Visit: <span>{{repo.html_url}}</span></p>
-        </div>
+        <div *ngFor="let repo of repos">
+            <div class="repos">
+                <div *ngIf="repo" class="name">
+                    <h2>Repository Name: <span class="highlight">{{repo.name}}</span></h2>
+                </div>
+                <div *ngIf="repo">
+                    <p>Description: <span>{{repo.description}}</span></p>
+                    <p>Language: <span>{{repo.language}}</span></p>
+                    <p>Date Created: <span>{{repo.created_at|dateCount}}</span></p>
+                    <p>Visit: <span>{{repo.html_url}}</span></p>
+                </div>
+            </div>
     </div>
+    
+    </div>
+    
 </body>
 </html>
