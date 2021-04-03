@@ -16,7 +16,7 @@
         <div *ngIf="repo">
             <p>Description: <span>{{repo.description}}</span></p>
             <p>Language: <span>{{repo.language}}</span></p>
-            <p>Date Created: <span>{{repo.created_at}}</span></p>
+            <p>Date Created: <span>{{repo.created_at|date}}</span></p>
             <p>Visit: <span>{{repo.html_url}}</span></p>
         </div>
     </div>
