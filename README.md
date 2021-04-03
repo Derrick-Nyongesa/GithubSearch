@@ -1,27 +1,36 @@
-# GithubSearch
+# Independent Project -GITHUB SEARCH
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Author's Name
+Derrick Nyongesa
 
-## Code scaffolding
+## Description of project
+This is a web application that enables anyone to search for a github username to view the profile and public repositories the user has.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project setup instructions
+1. Pull project from github Repository.
 
-## Build
+```bash
+git clone https://github.com/Derrick-Nyongesa/GithubSearch.git
+``` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Running unit tests
+## Technologies Used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* [HTML](https://html.spec.whatwg.org/)
+* [CSS](https://www.w3.org/TR/CSS/#css)
+* [Bootstrap](https://getbootstrap.com/)
+* [AngulerCLI]
 
-## Running end-to-end tests
+## Link to live site on GitHub Pages
+[Derrick Nyongesa https://derrick-nyongesa.github.io/Quotes/](https://derrick-nyongesa.github.io/GithubSearch/)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Contact Information 
 
-## Further help
+Any query? Contact me at [nyongesaderrick@gmail.com]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Copyright and license information
+Licensed under the [MIT license](LICENSE).
