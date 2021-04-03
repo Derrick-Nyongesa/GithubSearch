@@ -1,0 +1,24 @@
+body {
+    background: #92bde7;
+    line-height: 1.6;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1em;
+    font-size: 16px;
+}
+
+button{
+    height: 38px;
+    background-color: #ff0000;
+    border: 0;
+    padding: 0 20px 0 20px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+button:hover,
+button:focus{
+    background: #92bde7;
+    color: white;
+    outline: 0;
+    transition: background-color 2s ease-out;
+}
