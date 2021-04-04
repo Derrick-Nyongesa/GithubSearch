@@ -29,9 +29,10 @@
                         <h2>Name: <span class="highlight">{{user.login}}</span></h2>
                     </div>
                     <div *ngIf="user">
-                        <p>Followers: <span>{{user.followers_url}}</span></p>
-                        <p>Following: <span>{{user.following_url}}</span></p>
-                        <p>Repositories: <span>{{user.repos_url}}</span></p>
+                        <p>ID: <span>{{user.id}}</span></p>
+                        <p>Type: <span>{{user.type}}</span></p>
+                        <p>Score: <span>{{user.score}}</span></p>
+                        <p><a href="{{user.html_url}}"><button class="btn-outline-success btn btn-sm">Visit Github</button></a></p>
                         
                     </div>
                 </div>

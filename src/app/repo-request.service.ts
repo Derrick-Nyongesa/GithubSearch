@@ -27,9 +27,37 @@ export class RepoRequestService {
         'q': searchName,
       }
     }
+    
     let promise = new Promise<void>((resolve,reject)=>{
       this.http.get<ApiResponse>('https://api.github.com/search/repositories', options).toPromise().then(response=>{
         this.foundRepo = response.items
+        resolve()
+      },
+      error=>{
+        this.foundRepo = []
+
+        reject(error)
+      })
+    })
+    return promise
+  }
+
+  searchRepoByUsernameRequest(searchName: string){
+    interface ApiResponse{
+      total_count:number;
+      incomplete_results:boolean;
+      items: Repository[];
+    }
+    let options = {
+      headers: {
+        'Authorization': 'Basic ' + btoa(environment.apiKey)
+      }
+    }
+    const url = `https://api.github.com/users/${searchName}/repos`;
+    
+    let promise = new Promise<void>((resolve,reject)=>{
+      this.http.get<Repository[]>(url, options).toPromise().then(response=>{
+        this.foundRepo = response
         resolve()
       },
       error=>{
