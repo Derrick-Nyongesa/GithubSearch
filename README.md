@@ -26,7 +26,7 @@ git clone https://github.com/Derrick-Nyongesa/GithubSearch.git
 * [AngulerCLI]
 
 ## Link to live site on GitHub Pages
-[Derrick Nyongesa https://derrick-nyongesa.github.io/Quotes/](https://derrick-nyongesa.github.io/GithubSearch/)
+[Derrick Nyongesa https://derrick-nyongesa.github.io/GithubSearch/users](https://derrick-nyongesa.github.io/GithubSearch/users)
 
 ## Contact Information 
 
