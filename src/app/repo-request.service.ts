@@ -20,14 +20,15 @@ export class RepoRequestService {
       items: Repository[];
     }
     let options = {
-      headers: {
-        'Authorization': 'Basic ' + btoa(environment.apiKey)
-      },
       params: {
         'q': searchName,
       }
     }
-    
+    if (environment.apiKey) {
+      options['headers'] = {
+        'Authorization': 'Basic ' + btoa(environment.apiKey)
+      }
+    }
     let promise = new Promise<void>((resolve,reject)=>{
       this.http.get<ApiResponse>('https://api.github.com/search/repositories', options).toPromise().then(response=>{
         this.foundRepo = response.items
@@ -48,8 +49,9 @@ export class RepoRequestService {
       incomplete_results:boolean;
       items: Repository[];
     }
-    let options = {
-      headers: {
+    let options = {}
+    if (environment.apiKey) {
+      options['headers'] = {
         'Authorization': 'Basic ' + btoa(environment.apiKey)
       }
     }

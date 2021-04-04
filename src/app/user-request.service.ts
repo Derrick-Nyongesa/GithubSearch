@@ -20,11 +20,13 @@ export class UserRequestService {
       items: User[];
     }
     let options = {
-      headers: {
-        'Authorization': 'Basic ' + btoa(environment.apiKey)
-      },
       params: {
         'q': searchName,
+      }
+    }
+    if (environment.apiKey) {
+      options['headers'] = {
+        'Authorization': 'Basic ' + btoa(environment.apiKey)
       }
     }
     let promise = new Promise<void>((resolve,reject)=>{
